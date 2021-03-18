@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -6,9 +8,9 @@ body {
   margin: 0;
   font-size: 16px;
   display: grid;
-  grid-template-columns: minmax(1em,2em) 1fr 1fr minmax(1em,2em);
+  grid-template-columns: minmax(1em, 2em) 1fr 1fr minmax(1em, 2em);
   /* grid-gap: 2em; */
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-weight: 400;
 }
 
@@ -18,7 +20,9 @@ img {
   display: block;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-align: center;
@@ -39,7 +43,7 @@ h2 {
 
 footer {
   padding-bottom: 1em;
-  background-color: #00252E;
+  background-color: #00252e;
   color: white;
 }
 
@@ -58,18 +62,31 @@ footer a {
 }
 
 .grid-start {
-  justify-self: flex-start;
+  justify-self: start;
 }
 
 .grid-end {
   justify-self: end;
 }
 
-.intro {
-  text-align: center;
+@media screen and (min-width: 455px) {
+  .first-col {
+    grid-column: 2 / 3;
+  }
+
+  .second-col {
+    grid-column: 3 / 4;
+  }
 }
 
-.stat {
+.intro,
+.section-text,
+.footer-text {
+  max-width: 500px;
+}
+
+.stat,
+.intro {
   text-align: center;
 }
 
@@ -81,23 +98,33 @@ footer a {
   margin: 0 0 2em 0;
 }
 
-.footer-top,
+.svg-bg {
+  background-color: #f6fbff;
+}
+
+.svg-bg,
+.no-bg,
 footer {
+  display: grid;
+  grid-template-columns: minmax(1em, 2em) 1fr 1fr minmax(1em, 2em);
+  padding: 3em 0;
+  /* grid-column-gap: 2em; */
+}
+
+.footer-text {
+  max-width: 250px;
+}
+
+.footer-subtitle {
+  text-align: left;
+}
+
+.full-span {
   grid-column: 1 / span 4;
 }
 
-
-
-@media screen and (min-width: 455px) {
-
-  .first-col {
-    grid-column: 2 / 3;
-  }
-
-  .second-col {
-    grid-column: 3 / 4;
-  }
-
+.footer-icon {
+  display: inline;
 }
 
 .section-title,
@@ -111,8 +138,8 @@ footer {
 
 .btn {
   margin: 1em;
-  padding: .5em 2em;
-  font-size: .875rem;
+  padding: 0.5em 2em;
+  font-size: 0.875rem;
 }
 
 .btn--curved {
@@ -130,4 +157,3 @@ footer {
   background-color: hsl(322, 100%, 66%);
   border: none;
 }
-
