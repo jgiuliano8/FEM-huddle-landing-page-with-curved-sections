@@ -1,0 +1,133 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: minmax(1em,2em) 1fr 1fr minmax(1em,2em);
+  /* grid-gap: 2em; */
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+footer {
+  padding-bottom: 1em;
+  background-color: #00252E;
+  color: white;
+}
+
+footer a {
+  color: whitesmoke;
+}
+
+/* ========
+    Layout
+   ======== */
+.first-col,
+.second-col,
+.col-2 {
+  grid-column: 2 / span 2;
+  justify-self: center;
+}
+
+.grid-start {
+  justify-self: flex-start;
+}
+
+.grid-end {
+  justify-self: end;
+}
+
+.intro {
+  text-align: center;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  margin: 0;
+}
+
+.stat-text {
+  margin: 0 0 2em 0;
+}
+
+.footer-top,
+footer {
+  grid-column: 1 / span 4;
+}
+
+
+
+@media screen and (min-width: 455px) {
+
+  .first-col {
+    grid-column: 2 / 3;
+  }
+
+  .second-col {
+    grid-column: 3 / 4;
+  }
+
+}
+
+.section-title,
+.section-text {
+  text-align: center;
+}
+
+/* =========
+    Buttons
+   ========= */
+
+.btn {
+  margin: 1em;
+  padding: .5em 2em;
+  font-size: .875rem;
+}
+
+.btn--curved {
+  border-radius: 50px;
+}
+
+.btn--light {
+  color: hsl(322, 100%, 66%);
+  border: 1px solid hsl(322, 100%, 66%);
+  background-color: white;
+}
+
+.btn--accent {
+  color: white;
+  background-color: hsl(322, 100%, 66%);
+  border: none;
+}
+
