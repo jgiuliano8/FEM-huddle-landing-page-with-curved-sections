@@ -19,6 +19,11 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -53,7 +58,7 @@
         in genuine discussion.
       </p>
 
-      <button class="btn btn--curved btn--accent col-2">
+      <button class="btn btn--curved btn--accent btn--centered col-2">
         Get Started For Free
       </button>
     </section>
@@ -61,17 +66,25 @@
     <img class="col-2" src="images/screen-mockups.svg" />
     <section class="no-bg full-span">
       <div class="stat first-col">
-        <img src="images/icon-communities.svg" alt="Community image" />
+        <img
+          class="stat__img"
+          src="images/icon-communities.svg"
+          alt="Community image"
+        />
 
-        <p class="stat-number">1.4k+</p>
-        <p class="stat-text">Communities Formed</p>
+        <p class="stat__number">1.4k+</p>
+        <p class="stat__text">Communities Formed</p>
       </div>
 
       <div class="stat second-col">
-        <img src="images/icon-messages.svg" alt="Message bubble" />
+        <img
+          class="stat__img"
+          src="images/icon-messages.svg"
+          alt="Message bubble"
+        />
 
-        <p class="stat-number">2.7m+</p>
-        <p class="stat-text">Messages Sent</p>
+        <p class="stat__number">2.7m+</p>
+        <p class="stat__text">Messages Sent</p>
       </div>
     </section>
     <img src="images/bg-section-top-desktop-1.svg" alt="" class="full-span" />
@@ -135,9 +148,11 @@
     />
 
     <section class="no-bg full-span">
-      <h2 class="section-title col-2">Ready To Build Your Community?</h2>
+      <h2 class="section-title section-title--centered col-2">
+        Ready To Build Your Community?
+      </h2>
 
-      <button class="btn btn--curved btn--accent col-2">
+      <button class="btn btn--curved btn--accent btn--centered col-2">
         Get Started For Free
       </button>
     </section>
@@ -149,29 +164,63 @@
     />
 
     <footer class="full-span">
-      <div class="first-col">
-        <img class="footer-logo" src="images/logo-white.svg" alt="Huddle Logo">
-        <p class="footer-text col-2">
+      <div class="newsletter second-col">
+        <h2 class="footer-subtitle">Newsletter</h2>
+        <p class="footer-text">
+          To recieve tips on how to grow your community, sign up to our weekly
+          newsletter. We’ll never send you spam or pass on your email address
+        </p>
+        <form class="subscription-form" action="#" method="post">
+          <input
+            class="email-input email-input--rounded"
+            type="email"
+            name="email"
+            id="email"
+          />
+          <button class="btn btn--rounded btn--accent btn--form-submit">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+      <div class="contact first-col">
+        <img
+          class="footer-logo"
+          src="images/logo-white.svg"
+          alt="Huddle Logo"
+        />
+        <p class="footer-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla
           quam, hendrerit lacinia vestibulum a, ultrices quis sem.
         </p>
         <p>
-        <img class="footer-icon" src="images/icon-phone.svg" alt="Phone icon" /> Phone: +1-543-123-4567</p> 
-        <p><img src="images/icon-email.svg" alt="" class="footer-icon" /> example@huddle.com </p>
+          <img
+            class="footer-icon"
+            src="images/icon-phone.svg"
+            alt="Phone icon"
+          />
+          Phone: +1-543-123-4567
+        </p>
+        <p>
+          <img src="images/icon-email.svg" alt="" class="footer-icon" />
+          example@huddle.com
+        </p>
       </div>
 
-        <div class="second-col">
-          <h2 class="footer-subtitle">Newsletter</h2>
-          <p class="footer-text">To recieve tips on how to
-          grow your community, sign up to our weekly newsletter. We’ll never send you spam or pass on your email address</p> 
-          <button class="btn btn--curved btn--accent">Subscribe</button>
-          </p>
-        </div>
+      <p class="social first-col">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter-square"></i>
+      </p>
+
       <p class="attribution col-2">
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        <a
+          class="attribution__a"
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Jeff Giuliano</a>.
+        >. Coded by <a class="attribution__a" href="#">Jeff Giuliano</a>.
       </p>
     </footer>
   </body>
