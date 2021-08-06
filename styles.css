@@ -6,9 +6,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  /* Overflow set to visible to rectify seeing lines
-     between SVG backgrounds and regular divs */
-  overflow: visible;
 }
 
 body {
@@ -20,10 +17,9 @@ body {
   font-weight: 400;
 }
 
-/* img {
+img {
   max-width: 100%;
-  display: block;
-} */
+}
 
 /* ============
     Typography
@@ -72,8 +68,7 @@ footer {
     Links
    ======= */
 
-/* Make attribution links inline-block so they can rotate 
-   on hover. */
+/* Make attribution links inline-block so they can rotate on hover. */
 
 .attribution__a {
   display: inline-block;
@@ -95,6 +90,9 @@ footer {
   color: navajowhite;
 }
 
+.fab:hover {
+  color: lightskyblue;
+}
 /* ========
     Layout
    ======== */
@@ -183,16 +181,14 @@ footer {
   between SVGs and surrounding divs/sections. If
   rendered SVG came to 72.3 height it would leave
   a white line between the SVG and the adjacent
-  div. Bad scene. Making the SVG 1.05 times larger
+  div. Bad scene. Making the SVG 1.05 times higher
   and then making overflow visible fixed that.
+  The scale in the X direction needed to be 1
+  to prevent side-scrolling.
   */
 .pixel-fix {
-  transform: scale(1.05);
+  transform: scale(1, 1.05);
   overflow: visible;
-}
-
-img {
-  max-width: 100%;
 }
 
 .contact {
