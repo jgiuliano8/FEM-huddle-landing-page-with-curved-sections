@@ -246,7 +246,7 @@ footer {
 
 .email-input {
   width: 100%;
-  min-width: 100px;
+  min-width: 25px;
   max-width: 300px;
   padding: 0.5em;
 }
