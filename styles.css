@@ -6,22 +6,24 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  /* Overflow set to visible to rectify seeing lines
+     between SVG backgrounds and regular divs */
+  overflow: visible;
 }
 
 body {
   margin: 0;
   font-size: 16px;
   display: grid;
-  grid-template-columns: minmax(.5em, 4em) 1fr 1fr minmax(.5em, 4em);
+  grid-template-columns: minmax(0.5em, 4em) 1fr 1fr minmax(0.5em, 4em);
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-weight: 400;
 }
 
-img {
+/* img {
   max-width: 100%;
-  height: auto;
   display: block;
-}
+} */
 
 /* ============
     Typography
@@ -173,8 +175,24 @@ footer {
 .no-bg,
 footer {
   display: grid;
-  grid-template-columns: minmax(.5em, 4em) 1fr 1fr minmax(.5em, 4em);
-  padding: 3em 0;
+  grid-template-columns: minmax(0.5em, 4em) 1fr 1fr minmax(0.5em, 4em);
+  padding: 5em 0;
+}
+
+/* Class created to fix pixel rounding weirdness
+  between SVGs and surrounding divs/sections. If
+  rendered SVG came to 72.3 height it would leave
+  a white line between the SVG and the adjacent
+  div. Bad scene. Making the SVG 1.05 times larger
+  and then making overflow visible fixed that.
+  */
+.pixel-fix {
+  transform: scale(1.05);
+  overflow: visible;
+}
+
+img {
+  max-width: 100%;
 }
 
 .contact {
