@@ -84,15 +84,6 @@ footer {
   color: orange;
 }
 
-.attribution__a:hover,
-.attribution__a:focus {
-  transform: rotate(7deg);
-  color: navajowhite;
-}
-
-.fab:hover {
-  color: lightskyblue;
-}
 /* ========
     Layout
    ======== */
@@ -285,21 +276,10 @@ footer {
   background-color: white;
 }
 
-.btn--light:hover,
-.btn--light:focus {
-  color: hsl(321, 100%, 78%);
-  border-color: hsl(321, 100%, 78%);
-}
-
 .btn--accent {
   color: white;
   background-color: hsl(322, 100%, 66%);
   border: none;
-}
-
-.btn--accent:hover,
-.btn--accent:focus {
-  background-color: hsl(321, 100%, 78%);
 }
 
 @media screen and (min-width: 375px) {
@@ -312,5 +292,50 @@ footer {
 
   .btn--form-submit {
     margin: 0 0.75em;
+  }
+}
+
+/* Grouped all active states for mobile
+   devices */
+
+.btn--light:active {
+  color: hsl(321, 100%, 78%);
+  border-color: hsl(321, 100%, 78%);
+}
+
+.btn--accent:active {
+  background-color: hsl(321, 100%, 78%);
+}
+
+.attribution__a:active {
+  transform: rotate(7deg);
+  color: navajowhite;
+}
+
+.fab:active {
+  color: lightskyblue;
+}
+
+@media screen and (pointer: fine) {
+  .btn--light:hover,
+  .btn--light:focus {
+    color: hsl(321, 100%, 78%);
+    border-color: hsl(321, 100%, 78%);
+  }
+
+  .btn--accent:hover,
+  .btn--accent:focus {
+    background-color: hsl(321, 100%, 78%);
+  }
+
+  .attribution__a:hover,
+  .attribution__a:focus {
+    transform: rotate(7deg);
+    color: navajowhite;
+  }
+
+  .fab:hover,
+  .fab:focus {
+    color: lightskyblue;
   }
 }
