@@ -32,8 +32,8 @@ This is a screenshot of the final edit in Firefox.
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/jgiuliano8/FEM-huddle-landing-page-with-curved-sections)
-- Live Site URL: [Add live site URL here](https://fem-huddle-landing-page-with-curved-sections.vercel.app/)
+- Solution URL: [GitHub Repo](https://github.com/jgiuliano8/FEM-huddle-landing-page-with-curved-sections)
+- Live Site URL: [Vercel Site](https://fem-huddle-landing-page-with-curved-sections.vercel.app/)
 
 ## My process
 
