@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.png)
+![](./Screenshot.png)
 
 This is a screenshot of the final edit in Firefox.
 
