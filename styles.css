@@ -1,5 +1,20 @@
+/****************************/
+/*    Table of Contents     */
+/*                          */
+/* Global Styles --- ln16   */
+/* Typography ------ ln39   */
+/* Links ----------- ln82   */
+/* Layout ---------- ln102  */
+/* Form ------------ ln243  */
+/* Components ------ ln265  */
+/* Media Queries &          */
+/* Hover,Focus,Active       */
+/* States ---------- ln300  */
+/*                          */
+/****************************/
+
 /* ================
-    General Styles
+    Global Styles
    ================ */
 
 *,
@@ -11,10 +26,13 @@
 body {
   margin: 0;
   font-size: 16px;
-  display: grid;
-  grid-template-columns: minmax(0.5em, 4em) 1fr 1fr minmax(0.5em, 4em);
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-weight: 400;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(0.5em, 4em) 1fr 1fr minmax(0.5em, 4em);
 }
 
 img {
@@ -246,9 +264,9 @@ footer {
   align-self: flex-end;
 }
 
-/* =========
-    Buttons
-   ========= */
+/* ====================
+    Buttons/Components
+   ==================== */
 
 .btn {
   margin: 1em 0;
@@ -281,6 +299,14 @@ footer {
   background-color: hsl(322, 100%, 66%);
   border: none;
 }
+
+/* ===============
+    Media Queries
+          +
+    Hover, Focus
+    and Active
+    States
+   =============== */
 
 @media screen and (min-width: 375px) {
   .newsletter {
