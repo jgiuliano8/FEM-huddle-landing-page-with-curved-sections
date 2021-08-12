@@ -24,7 +24,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="styles.css" />
+    <link href="styles.css" rel="stylesheet" />
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
@@ -40,14 +40,12 @@
   <body>
     <header class="no-bg full-span">
       <img
-        class="grid-start logo--top"
+        class="logo--top grid-start"
         src="images/logo.svg"
         alt="Huddle Logo"
       />
 
-      <button class="btn btn--top btn--curved btn--light grid-end">
-        Try it free
-      </button>
+      <a class="btn btn--light grid-end" href="#">Try it free</a>
     </header>
     <main>
       <section class="no-bg full-span">
@@ -61,9 +59,7 @@
           engage in genuine discussion.
         </p>
 
-        <button class="btn btn--curved btn--accent btn--centered col-2">
-          Get Started For Free
-        </button>
+        <a href="#" class="btn btn--CTA col-2">Get Started For Free</a>
       </section>
 
       <img
@@ -175,9 +171,7 @@
       <section class="no-bg full-span">
         <h2 class="section__title col-2">Ready To Build Your Community?</h2>
 
-        <button class="btn btn--curved btn--accent col-2">
-          Get Started For Free
-        </button>
+        <a href="#" class="btn btn--CTA col-2">Get Started For Free</a>
       </section>
 
       <img
@@ -202,9 +196,7 @@
             id="email"
             aria-label="Email"
           />
-          <button class="btn btn--rounded btn--accent btn--form-submit">
-            Subscribe
-          </button>
+          <button type="submit" class="btn btn--form-submit">Subscribe</button>
         </form>
       </div>
 
@@ -219,19 +211,23 @@
           quam, hendrerit lacinia vestibulum a, ultrices quis sem.
         </p>
         <p>
-          <img
-            class="footer__icon"
-            src="images/icon-phone.svg"
-            alt="Phone icon"
-          />
+          <a href="tel:+15431234567" class="footer__a">
+            <img
+              class="footer__icon"
+              src="images/icon-phone.svg"
+              alt="Phone icon"
+            />
+          </a>
           Phone: +1-543-123-4567
         </p>
         <p>
-          <img
-            src="images/icon-email.svg"
-            alt="Email icon"
-            class="footer__icon"
-          />
+          <a href="mailto:example@huddle.com" class="footer__a">
+            <img
+              src="images/icon-email.svg"
+              alt="Email icon"
+              class="footer__icon"
+            />
+          </a>
           example@huddle.com
         </p>
       </div>
