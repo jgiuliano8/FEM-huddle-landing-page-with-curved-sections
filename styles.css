@@ -76,12 +76,6 @@ h2 {
   font-weight: 700;
 }
 
-footer {
-  padding-bottom: 1em;
-  background-color: #00252e;
-  color: white;
-}
-
 /* =======
     Links
    ======= */
@@ -109,10 +103,16 @@ footer {
 /* ========
     Layout
    ======== */
+/* .first-col and .second-col are actually the second
+   and third columns respectively. The actual first column
+   and fourth columns are used as gutter. */
 
 /* In mobile-first CSS, first and
    second columns become "one"
    column. */
+
+/* .col-2 is a 2-span column that joins the second
+   and third columns. So kind of a center column. */
 
 .first-col,
 .second-col,
@@ -187,9 +187,12 @@ footer {
   background-color: #f6fbff;
 }
 
-.semi-footer {
-  display: grid;
-  grid-template-columns: minmax(0.5em, 4em) 1fr 1fr minmax(0.5em, 4em);
+.quasi-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 9em 0;
 }
 
 .svg-bg,
@@ -200,8 +203,10 @@ footer {
   padding: 5em 0;
 }
 
-.semi-footer {
-  padding: 9em 0;
+footer {
+  padding-bottom: 1em;
+  background-color: #00252e;
+  color: white;
 }
 
 /* Class created to fix pixel rounding weirdness
@@ -306,6 +311,7 @@ footer {
 }
 
 .btn--CTA {
+  display: block;
   padding: 1.5em 6.5em;
   margin-top: 1.5em;
 }
