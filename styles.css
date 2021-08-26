@@ -24,7 +24,7 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 body {
@@ -77,6 +77,12 @@ h1,
 
 .contact-text {
   vertical-align: middle;
+}
+
+.phone-contact,
+.email-contact,
+small {
+  font-size: 10px;
 }
 
 .fab {
