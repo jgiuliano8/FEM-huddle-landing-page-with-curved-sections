@@ -2,14 +2,14 @@
 /*    Table of Contents     */
 /*                          */
 /* Global Styles --- ln16   */
-/* Typography ------ ln39   */
-/* Links ----------- ln82   */
-/* Layout ---------- ln102  */
-/* Form ------------ ln243  */
-/* Components ------ ln265  */
+/* Typography ------ ln42   */
+/* Links ----------- ln86   */
+/* Layout ---------- ln110  */
+/* Form ------------ ln336  */
+/* Components ------ ln361  */
 /* Media Queries &          */
 /* Hover,Focus,Active       */
-/* States ---------- ln300  */
+/* States ---------- ln402  */
 /*                          */
 /****************************/
 
@@ -23,19 +23,19 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   margin: 0;
-  font-size: 16px;
+  padding: 0;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-weight: 400;
 }
 
-main {
-  display: grid;
-  grid-template-columns: minmax(0.5em, 4em) 1fr 1fr minmax(0.5em, 4em);
-}
-
 img {
+  display: block;
   max-width: 100%;
 }
 
@@ -45,35 +45,42 @@ img {
 
 h1,
 h2 {
+  margin: 0 auto;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 0;
-}
-
-.section__title,
-.section__text {
-  text-align: center;
-}
-
-@media screen and (min-width: 375px) {
-  .section__title,
-  .section__text {
-    text-align: left;
-  }
 }
 
 h1 {
-  font-size: 3.5rem;
-}
-
-h2 {
   font-size: 2.5rem;
 }
 
-.stat__number {
-  font-size: 7vw;
+h2 {
+  font-size: 1.5rem;
+}
+
+h1,
+.section__title,
+.section__text,
+.intro {
+  text-align: center;
+}
+
+.section__text,
+.intro {
+  line-height: 1.6;
+}
+
+.stats__number {
+  font-size: 5em;
   font-weight: 700;
+}
+
+.contact-text {
+  vertical-align: middle;
+}
+
+.fab {
+  font-size: 18px;
 }
 
 /* =======
@@ -103,167 +110,227 @@ h2 {
 /* ========
     Layout
    ======== */
-/* .first-col and .second-col are actually the second
-   and third columns respectively. The actual first column
-   and fourth columns are used as gutter. */
 
-/* In mobile-first CSS, first and
-   second columns become "one"
-   column. */
+/* The header is flexbox throughout the device widths.
 
-/* .col-2 is a 2-span column that joins the second
-   and third columns. So kind of a center column. */
+   The sections start out as flexbox. The middle sections
+   switch to grid with an auto-flow of column when the
+   device width reaches 768px. This puts the text and images
+   next to each other instead of on top. I used grid instead 
+   of just switching the flex-direction to row/row-reverse
+   because the SVGs resized better and it was easier to get
+   even columns that way.
+   
+   The footer is grid throughout the device widths. I used
+   this because the grid-areas eased layout maneuvers.
+   
+   The two form elements are flex and I just switch the
+   flex direction at 768px to move them from on top of each
+   other to next to each other.
 
-.first-col,
-.second-col,
-.col-2 {
-  grid-column: 2 / span 2;
+*/
+
+header {
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2em auto 10em;
 }
 
-.col-2 {
-  justify-self: center;
-  text-align: center;
+.header__logo {
+  max-width: 85px;
 }
 
-.col--center {
-  justify-self: center;
-  align-self: center;
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em 2em;
 }
 
-@media screen and (min-width: 375px) {
-  .first-col {
-    grid-column: 2 / 3;
-    margin-right: 1em;
+/* Because of the mobile design spec, the flex-direction
+   needs to be reversed to get the images above the
+   text */
+
+.section--grow,
+.section--users {
+  flex-direction: column-reverse;
+}
+
+.section__img {
+  padding: 6em;
+}
+
+.section__div {
+  padding-top: 3em;
+}
+
+@media screen and (min-width: 768px) {
+  .stats,
+  .section--flow,
+  .section--grow,
+  .section--users {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    justify-items: center;
   }
 
-  .second-col {
-    grid-column: 3 / 4;
-    margin-left: 1em;
+  .section__img {
+    padding: 0;
   }
-}
 
-.first-col + .second-col {
-  margin-left: 3em;
-}
-
-.grid-start {
-  grid-column: 1 / 3;
-  justify-self: start;
-}
-
-.grid-end {
-  grid-column: 3 / 5;
-  justify-self: end;
-}
-
-.logo--top {
-  margin: 0 3.5em;
+  .section__div {
+    padding: 0;
+  }
 }
 
 .intro,
-.section__text,
-.footer__text {
-  max-width: 500px;
+.section__text {
+  max-width: 225px;
 }
 
-.stat,
 .intro {
-  text-align: center;
+  margin: 1em auto;
 }
 
-.stat__number {
+.hero__img {
+  margin: 5em auto;
+}
+
+.stats__ul {
+  margin: 3em auto;
+  padding: 0;
+  list-style: none;
+}
+
+.stats__number {
   margin: 0;
 }
 
-.stat__text {
+.stats__text {
+  font-size: 1.2rem;
+  color: #808080;
   margin: 0 0 2em 0;
+  text-align: center;
 }
 
-.stat__img {
-  margin: 0 auto;
+.stats__img {
+  max-width: 25px;
 }
 
-.svg-bg {
-  background-color: #f6fbff;
+.section--grow,
+.section--users {
+  background-color: hsl(207, 100%, 98%);
 }
 
 .quasi-footer {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 9em 0;
 }
 
-.svg-bg,
-.no-bg,
-footer {
-  display: grid;
-  grid-template-columns: minmax(0.5em, 4em) 1fr 1fr minmax(0.5em, 4em);
-  padding: 5em 0;
+.newsletter {
+  grid-area: newsletter;
+}
+
+.contact {
+  grid-area: contact;
+}
+
+.attribution {
+  grid-area: attribution;
 }
 
 footer {
+  display: grid;
+  grid-template-columns: 2em 1fr 1fr 2em;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". newsletter newsletter ."
+    ". contact contact ."
+    ". attribution attribution .";
+
+  align-items: start;
+  row-gap: 6em;
+  padding-top: 5em;
   padding-bottom: 1em;
   background-color: #00252e;
   color: white;
+}
+
+@media screen and (min-width: 375px) {
+  footer {
+    grid-template-areas:
+      ". contact newsletter ."
+      ". attribution attribution .";
+    column-gap: 1em;
+  }
+}
+
+.social {
+  margin: 3.5em 0;
+}
+
+.newsletter__subtitle {
+  text-align: left;
+}
+
+.newsletter__p,
+.contact__p {
+  max-width: 250px;
+  line-height: 1.6;
+}
+
+.newsletter__p {
+  margin-bottom: 2.5em;
+}
+
+.contact__p {
+  margin-bottom: 3.5em;
+}
+
+.footer__logo {
+  max-width: 200px;
+}
+
+.phone-contact {
+  margin-bottom: 1.5em;
+}
+
+.phone-contact__img,
+.email-contact__img {
+  display: inline-block;
+  margin-right: 1em;
+  vertical-align: middle;
+}
+
+.fab + .fab {
+  margin-left: 0.75em;
 }
 
 /* Class created to fix pixel rounding weirdness
   between SVGs and surrounding divs/sections. If
   rendered SVG came to 72.3 height it would leave
   a white line between the SVG and the adjacent
-  div. Bad scene. Making the SVG 1.05 times higher
+  div. Bad scene. Making the SVG 1.1 times higher
   and then making overflow visible fixed that.
   The scale in the X direction needed to be 1
   to prevent side-scrolling.
   */
+
 .pixel-fix {
-  transform: scale(1, 1.05);
+  transform: scale(1, 1.1);
   overflow: visible;
 }
 
-.contact {
-  margin-top: 2em;
-}
+/* At wider screen sizes, SVGs do not need to be scaled
+   in the Y direction as much */
 
-@media screen and (min-width: 375px) {
-  .contact {
-    order: 1;
+@media screen and (min-width: 768px) {
+  .pixel-fix {
+    transform: scale(1, 1.05);
   }
-
-  .newsletter {
-    order: 2;
-  }
-
-  .social {
-    order: 3;
-  }
-
-  .attribution {
-    order: 4;
-  }
-}
-
-.footer__text {
-  max-width: 300px;
-}
-
-.footer__subtitle {
-  text-align: left;
-}
-
-.full-span {
-  grid-column: 1 / span 4;
-}
-
-.footer__icon {
-  display: inline-block;
-  margin-right: 0.5em;
-}
-
-.fab + .fab {
-  margin-left: 0.75em;
 }
 
 /* ======
@@ -271,23 +338,24 @@ footer {
    ====== */
 
 .subscription-form {
-  max-width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .email-input {
   width: 100%;
-  min-width: 25px;
-  max-width: 300px;
   padding: 0.5em;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
-.btn--form-submit {
-  align-self: flex-end;
-  border-radius: 4px;
-  padding: 0.5em 2em;
+@media screen and (min-width: 768px) {
+  .newsletter {
+    width: 100%;
+  }
+
+  .email-input {
+    max-width: 300px;
+  }
 }
 
 /* ====================
@@ -296,24 +364,16 @@ footer {
 
 .btn {
   text-decoration: none;
-  font-size: 0.875rem;
   box-shadow: 0 2px 5px 2px rgba(150, 150, 150, 0.3);
 }
 
 .btn--light {
   align-self: center;
-  margin: 0 3.5em;
   border-radius: 50px;
-  padding: 0.75em 2.25em;
+  padding: 0.5em 2.25em;
   color: hsl(322, 100%, 66%);
   border: 1px solid hsl(322, 100%, 66%);
   background-color: white;
-}
-
-.btn--CTA {
-  display: block;
-  padding: 1.5em 6.5em;
-  margin-top: 1.5em;
 }
 
 .btn--CTA,
@@ -321,7 +381,22 @@ footer {
   color: white;
   background-color: hsl(322, 100%, 66%);
   border: none;
+}
+
+.btn--CTA {
+  display: block;
+  width: 200px;
+  margin: 3.5em auto;
+  padding: 1.25em 3em;
   border-radius: 50px;
+  text-align: center;
+}
+
+.btn--form-submit {
+  align-self: flex-end;
+  border-radius: 3px;
+  padding: 0.75em 2.5em;
+  margin-top: 0.75em;
 }
 
 /* ===============
@@ -332,9 +407,9 @@ footer {
     States
    =============== */
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 768px) {
   .newsletter {
-    justify-self: end;
+    justify-self: start;
   }
   .subscription-form {
     flex-direction: row;
@@ -366,6 +441,9 @@ footer {
   color: lightskyblue;
 }
 
+/* Put hover and focus states in a media query for devices
+   with a mouse */
+
 @media screen and (pointer: fine) {
   .btn--light:hover,
   .btn--light:focus {
@@ -389,5 +467,6 @@ footer {
   .fab:hover,
   .fab:focus {
     color: lightskyblue;
+    cursor: pointer;
   }
 }
